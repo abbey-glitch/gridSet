@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand text-info" href="#">shopping site</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Service
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">About</a></li>
+                      <li><a class="dropdown-item" href="#">Service</a></li>
+                      <li><a class="dropdown-item" href="#">Contact</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+{% for blog in blogs %}
+  <div class="card">
+    <h5 class="card-header">{{blog.title}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">{{blog.author}}</p>
+      <img src="{{blog.image}}" width="100%" alt="">
+      <a href="#" class="btn btn-primary">Add</a>
+    </div>
+  </div>
+{% endfor %}
+    </div>
+</div>
+
+    <!-- <ul>
+        <li>{{blog.title}}</li>
+    </ul> -->
+{% endblock%}
